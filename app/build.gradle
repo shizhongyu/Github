@@ -11,6 +11,17 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    productFlavors {
+        xiaomi {}
+        _360 {}
+        baidu {}
+        wandoujia {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
     buildTypes {
         release {
             minifyEnabled false
